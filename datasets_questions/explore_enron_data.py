@@ -15,8 +15,13 @@
     
 """
 
+import pandas as pd
+import numpy as nu
 import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
-
+data = pd.DataFrame(enron_data).T;
+data.query("email_address != 'NaN'")
+data.query("salary != 'NaN'")
+datapoi = data.query("poi == True")
 
